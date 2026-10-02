@@ -1,20 +1,45 @@
 name: Shree Dnyanoba Tukoba - workflows
 on: [push, workflow_dispatch]
 jobs:
+
+  know-machine-config:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Print Machine OS name.
+        run: echo "=== OS ==="; cat /etc/os-release | grep PRETTY_NAME
+
+      - name: Know about kernel info.
+        run: echo "=== Kernel/Arch ==="; uname -mr
+
+      - name: See some info about CPU.
+        run: echo "=== CPU ==="; lscpu | grep -E 'Model name|Architecture|CPU\(s\)|Thread|Core|Socket'
+
+      - name: Want to know about RAM.
+        run: echo "=== RAM ==="; free -h
+
+      - name: Know you available space
+        run: echo "=== Disk ==="; df -h /
+
   mauli-first-job:
     runs-on: ubuntu-latest
     steps:
       - name: Create a directories
-        run: mkdir -p basics/src/modules basics/src/controllers
+        run: mkdir src/modules src/controllers
+
       - name: Create chanting js file
         run: echo "console.log('Shree Dnyanoba Mauli Tukaram')" > mauli.js
+
       - name: Run Node.js file
         run: node mauli.js
+
       - name: List all files
         run: ls -a
       - name: Print great sant names
         run: echo Shree Nivrutti Dnyandev Sopan Muktabai Eknath Namdev Tukaram..!
+
       - name: Create db js file
-        run: echo "console.log('This is a database connection config file')" > basics/db.js
+        run: echo "console.log('This is a database connection config file')" > db.js
+        
       - name: Print working directory
         run: pwd
