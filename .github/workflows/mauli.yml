@@ -1,5 +1,5 @@
 name: Shree Dnyanoba Tukoba - workflows
-on: [push, workflow_dispatch]
+on: workflow_dispatch
 jobs:
 
   know-machine-config:
@@ -21,11 +21,12 @@ jobs:
       - name: Know you available space
         run: echo "=== Disk ==="; df -h /
 
+
   mauli-first-job:
     runs-on: ubuntu-latest
     steps:
       - name: Create a directories
-        run: mkdir src/modules src/controllers
+        run: mkdir -p src/modules -p src/controllers
 
       - name: Create chanting js file
         run: echo "console.log('Shree Dnyanoba Mauli Tukaram')" > mauli.js
