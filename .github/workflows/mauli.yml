@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Create a directories
-        run: mkdir src/modules src/controllers
+        run: mkdir -p basics/src/modules basics/src/controllers
       - name: Create chanting js file
         run: echo "console.log('Shree Dnyanoba Mauli Tukaram')" > mauli.js
       - name: Run Node.js file
@@ -15,6 +15,6 @@ jobs:
       - name: Print great sant names
         run: echo Shree Nivrutti Dnyandev Sopan Muktabai Eknath Namdev Tukaram..!
       - name: Create db js file
-        run: echo "console.log('This is a database connection config file')" > db.js
+        run: echo "console.log('This is a database connection config file')" > basics/db.js
       - name: Print working directory
         run: pwd
