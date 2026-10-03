@@ -2,6 +2,16 @@ name: Shree Dnyanoba Tukoba - workflows
 on: workflow_dispatch
 jobs:
 
+  use-existing-actions:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4        # using an action
+  
+    - name: Install dependencies
+      run: npm install                  # running a shell command
+
+
   know-machine-config:
     runs-on: ubuntu-latest
 
