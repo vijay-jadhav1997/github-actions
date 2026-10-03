@@ -57,9 +57,9 @@ jobs:
 
   jay-shree-hanuman:
     runs-on: ubuntu-latest
-  steps:
-  - name: Print Jay Hari
-    run: echo Jay Hari
-  - name: List all files
-    run: ls -a
+    steps:
+    - name: Print Jay Hari
+      run: echo Jay Hari
+    - name: List all files
+      run: ls -a
     
